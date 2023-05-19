@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "O3n8EWZZeQTFGWpIsT9VBvmXUD5o/ew54Qxs7D96mzcMKes4vy6n8JlQgcsl9EIS94iLBlxhAB2Idm8jVSjPrg==",
+  "success": true,
+  "projectFilePath": "D:\\Documentos\\GameDevelopment\\RobotGame\\RobotGame\\RobotGame.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Pedro\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\Pedro\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
+  ],
+  "logs": []
+}

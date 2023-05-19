@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"D:/Documentos/GameDevelopment/RobotGame/RobotGame/Content/sprites/roboboy2.png","D:/Documentos/GameDevelopment/RobotGame/RobotGame/Content/bin/DesktopGL/Content/sprites/roboboy2.xnb","TextureProcessor","Texture2DContent",340,1109,0.017844
+"D:/Documentos/GameDevelopment/RobotGame/RobotGame/Content/sprites/robotboy2.png","D:/Documentos/GameDevelopment/RobotGame/RobotGame/Content/bin/DesktopGL/Content/sprites/robotboy2.xnb","TextureProcessor","Texture2DContent",339,1109,0.1949503
