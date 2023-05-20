@@ -4,10 +4,16 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/Documentos/GameDevelopment/RobotGame/RobotGame/Content/sprites/roboboy2.png</File>
-    <File>D:/Documentos/GameDevelopment/RobotGame/RobotGame/Content/sprites/robotboy2.png</File>
+    <File>D:/Documentos/GameDevelopment/RobotGame/RobotGame/Content/sprites/robotboyD.png</File>
+    <File>D:/Documentos/GameDevelopment/RobotGame/RobotGame/Content/sprites/robotboyL.png</File>
+    <File>D:/Documentos/GameDevelopment/RobotGame/RobotGame/Content/sprites/robotboyR.png</File>
+    <File>D:/Documentos/GameDevelopment/RobotGame/RobotGame/Content/sprites/robotboyU.png</File>
+    <File>D:/Documentos/GameDevelopment/RobotGame/RobotGame/Content/ui_basics/cursor.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>

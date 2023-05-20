@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>D:/Documentos/GameDevelopment/RobotGame/RobotGame/Content/sprites/roboboy2.png</SourceFile>
-  <SourceTime>2023-05-18T23:00:23.3583118-03:00</SourceTime>
-  <DestFile>D:/Documentos/GameDevelopment/RobotGame/RobotGame/Content/bin/DesktopGL/Content/sprites/roboboy2.xnb</DestFile>
-  <DestTime>2023-05-19T00:13:32.6980302-03:00</DestTime>
+  <SourceFile>D:/Documentos/GameDevelopment/RobotGame/RobotGame/Content/sprites/robotboyR.png</SourceFile>
+  <SourceTime>2023-05-20T01:56:19.5888481-03:00</SourceTime>
+  <DestFile>D:/Documentos/GameDevelopment/RobotGame/RobotGame/Content/bin/DesktopGL/Content/sprites/robotboyR.xnb</DestFile>
+  <DestTime>2023-05-20T02:22:31.5969194-03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T08:44:56-03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

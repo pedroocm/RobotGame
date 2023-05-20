@@ -18,20 +18,20 @@ namespace RobotGame
 {
     public class World
     {
-        Element2d robot_boy;
+        RobotBoy robot_boy;
         public World()
         {
-            robot_boy = new Element2d("2d\\robotboy2", new Vector2(300, 300), new Vector2(90, 90));
+            robot_boy = new RobotBoy("sprites\\robotboyR", new Vector2(300, 300), new Vector2(90, 90));
         }
 
         public virtual void Update()
         {
-
+            robot_boy.Update();
         }
 
-        public virtual void Draw()
+        public virtual void Draw(Vector2 offset)
         {
-            robot_boy.Draw();
+            robot_boy.Draw(offset);
         }
     }
 }

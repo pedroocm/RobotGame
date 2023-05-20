@@ -18,33 +18,49 @@ namespace RobotGame
 {
     public class Element2d
     {
-        public Vector2 pos, dims;
-        public Texture2D model;
+        public float Rot;
+        public Vector2 Pos, Dims;
+        public Texture2D Model;
 
         public Element2d(string path, Vector2 position, Vector2 dimensions)
         {
-            pos = position;
-            dims = dimensions;
-
-            model = Globals.content.Load<Texture2D>(path);
+            Pos = position;
+            Dims = dimensions;
+            Model = Globals.content.Load<Texture2D>(path);
         }
 
-        public void Update()
+        public virtual void Update()
         {
 
         }
 
-        public void Draw()
+        public virtual void Draw(Vector2 offset)
         {
-            if (model != null)
+            if (Model != null)
             {
                 Globals.spriteBatch.Draw(
-                    model,
-                    new Rectangle((int)pos.X, (int)pos.Y, (int)dims.X, (int)dims.Y),
+                    Model,
+                    new Rectangle((int)(Pos.X + offset.X), (int)(Pos.Y + offset.Y), (int)Dims.X, (int)Dims.Y),
                     null,
                     Color.White,
-                    0.0f,
-                    new Vector2(model.Bounds.Width / 2, model.Bounds.Height / 2),
+                    Rot,
+                    new Vector2(Model.Bounds.Width / 2, Model.Bounds.Height / 2),
+                    new SpriteEffects(),
+                    0);
+            }
+        }
+
+        public virtual void Draw(Vector2 offset, Vector2 origin)
+        {
+            if (Model != null)
+            {
+                Globals.spriteBatch.Draw(
+                    Model,
+                    new Rectangle((int)(Pos.X + offset.X), (int)(Pos.Y + offset.Y), (int)Dims.X, (int)Dims.Y),
+                    null,
+                    Color.White,
+                    Rot,
+                    new Vector2(origin.X, origin.Y),
                     new SpriteEffects(),
                     0);
             }

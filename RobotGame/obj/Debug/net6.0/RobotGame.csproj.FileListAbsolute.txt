@@ -23,7 +23,9 @@ D:\Documentos\GameDevelopment\RobotGame\RobotGame\obj\Debug\net6.0\refint\RobotG
 D:\Documentos\GameDevelopment\RobotGame\RobotGame\obj\Debug\net6.0\RobotGame.pdb
 D:\Documentos\GameDevelopment\RobotGame\RobotGame\obj\Debug\net6.0\RobotGame.genruntimeconfig.cache
 D:\Documentos\GameDevelopment\RobotGame\RobotGame\obj\Debug\net6.0\ref\RobotGame.dll
-D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\2d\roboboy2.xnb
-D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\sprites\roboboy2.xnb
-D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\2d\robotboy2.xnb
-D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\sprites\robotboy2.xnb
+D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\2d\ui_basics\cursor.xnb
+D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\ui_basics\cursor.xnb
+D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\sprites\robotboyD.xnb
+D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\sprites\robotboyL.xnb
+D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\sprites\robotboyR.xnb
+D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\sprites\robotboyU.xnb

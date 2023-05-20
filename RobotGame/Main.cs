@@ -10,11 +10,13 @@ namespace RobotGame
 
         World world;
 
+        Element2d cursor;
+
         public Main()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            IsMouseVisible = true;
+            IsMouseVisible = false;
         }
 
         protected override void Initialize()
@@ -30,6 +32,12 @@ namespace RobotGame
             Globals.spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+
+            cursor = new Element2d("2d\\ui_basics\\cursor", new Vector2(0, 0), new Vector2(32, 32));
+
+            Globals.keyboard = new RgKeyboard();
+            Globals.mouse = new RgMouseControl();
+
             world = new World();
         }
 
@@ -40,7 +48,13 @@ namespace RobotGame
 
             // TODO: Add your update logic here
 
+            Globals.keyboard.Update();
+            Globals.mouse.Update();
+
             world.Update();
+
+            Globals.keyboard.UpdateOld();
+            Globals.mouse.UpdateOld();
 
             base.Update(gameTime);
         }
@@ -53,9 +67,9 @@ namespace RobotGame
             Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp);
 
 
-            world.Draw();
+            world.Draw(Vector2.Zero);
 
-
+            cursor.Draw(new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y), new Vector2(0, 0));
 
             Globals.spriteBatch.End();
 
