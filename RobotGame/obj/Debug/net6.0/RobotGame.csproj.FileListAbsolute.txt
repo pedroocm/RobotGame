@@ -25,7 +25,9 @@ D:\Documentos\GameDevelopment\RobotGame\RobotGame\obj\Debug\net6.0\RobotGame.gen
 D:\Documentos\GameDevelopment\RobotGame\RobotGame\obj\Debug\net6.0\ref\RobotGame.dll
 D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\2d\ui_basics\cursor.xnb
 D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\ui_basics\cursor.xnb
-D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\sprites\robotboyD.xnb
-D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\sprites\robotboyL.xnb
-D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\sprites\robotboyR.xnb
-D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\sprites\robotboyU.xnb
+D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\projectiles\bullet.xnb
+D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\player\robotboyD.xnb
+D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\player\robotboyL.xnb
+D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\player\robotboyR.xnb
+D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\player\robotboyU.xnb
+D:\Documentos\GameDevelopment\RobotGame\RobotGame\bin\Debug\net6.0\Content\weapons\robot_gun.xnb

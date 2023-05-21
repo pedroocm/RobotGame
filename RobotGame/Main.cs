@@ -8,9 +8,9 @@ namespace RobotGame
     {
         private GraphicsDeviceManager graphics;
 
-        World world;
+        World World;
 
-        Element2d cursor;
+        Element2d Cursor;
 
         public Main()
         {
@@ -22,23 +22,30 @@ namespace RobotGame
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            Globals.ScreenWidth = 800;
+            Globals.ScreenHeight = 500;
+
+            graphics.PreferredBackBufferWidth = Globals.ScreenWidth;
+            graphics.PreferredBackBufferHeight = Globals.ScreenHeight;
+
+            graphics.ApplyChanges();
 
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
-            Globals.content = this.Content;
-            Globals.spriteBatch = new SpriteBatch(GraphicsDevice);
+            Globals.Content = this.Content;
+            Globals.SpriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
 
-            cursor = new Element2d("2d\\ui_basics\\cursor", new Vector2(0, 0), new Vector2(32, 32));
+            Cursor = new Element2d("2d\\ui_basics\\cursor", new Vector2(0, 0), new Vector2(32, 32));
 
-            Globals.keyboard = new RgKeyboard();
-            Globals.mouse = new RgMouseControl();
+            Globals.Keyboard = new RgKeyboard();
+            Globals.Mouse = new RgMouseControl();
 
-            world = new World();
+            World = new World();
         }
 
         protected override void Update(GameTime gameTime)
@@ -47,14 +54,15 @@ namespace RobotGame
                 Exit();
 
             // TODO: Add your update logic here
+            Globals.GameTime = gameTime;
 
-            Globals.keyboard.Update();
-            Globals.mouse.Update();
+            Globals.Keyboard.Update();
+            Globals.Mouse.Update();
 
-            world.Update();
+            World.Update();
 
-            Globals.keyboard.UpdateOld();
-            Globals.mouse.UpdateOld();
+            Globals.Keyboard.UpdateOld();
+            Globals.Mouse.UpdateOld();
 
             base.Update(gameTime);
         }
@@ -64,14 +72,14 @@ namespace RobotGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp);
+            Globals.SpriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp);
 
 
-            world.Draw(Vector2.Zero);
+            World.Draw(Vector2.Zero);
 
-            cursor.Draw(new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y), new Vector2(0, 0));
+            Cursor.Draw(new Vector2(Globals.Mouse.newMousePos.X, Globals.Mouse.newMousePos.Y), new Vector2(0, 0));
 
-            Globals.spriteBatch.End();
+            Globals.SpriteBatch.End();
 
             base.Draw(gameTime);
         }

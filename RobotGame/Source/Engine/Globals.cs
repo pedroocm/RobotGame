@@ -16,15 +16,21 @@ using Microsoft.Xna.Framework.Media;
 
 namespace RobotGame
 {
+    public delegate void PassObject(object i);
+    public delegate object PassObjectAndReturn(object i);
+
     public class Globals
     {
-        public static int screenWidth, screenHeight;
-        public static ContentManager content;
-        public static SpriteBatch spriteBatch;
+        public static int ScreenWidth, ScreenHeight;
+        public static ContentManager Content;
+        public static SpriteBatch SpriteBatch;
 
-        public static RgKeyboard keyboard;
-        public static RgMouseControl mouse;
+        public static RgKeyboard Keyboard;
+        public static RgMouseControl Mouse;
 
+        public static GameTime GameTime;
+
+        public static Vector2 GetVector(Vector2 v) { return new Vector2(v.X, v.Y);  }
 
         public static float GetDistance(Vector2 pos, Vector2 target)
         {
@@ -45,7 +51,7 @@ namespace RobotGame
             return Constants.DOWN;
         }
 
-        public static float GetAngle(Vector2 pos, Vector2 focus)
+        public static float GetAngle(Vector2 pos, Vector2 focus, float offset = 0.0f)
         {
 
             float h, sineTheta, angle = 0f;
@@ -66,21 +72,21 @@ namespace RobotGame
             //Quadrant 2
             if (pos.X - focus.X > 0 && pos.Y - focus.Y > 0)
             {
-                angle = (float)(Math.PI * 3 / 2 + angle);
+                angle = (float)(Math.PI + angle);
             }
             //Quadrant 3
             else if (pos.X - focus.X > 0 && pos.Y - focus.Y < 0)
             {
-                angle = (float)(Math.PI * 3 / 2 - angle);
+                angle = (float)(Math.PI - angle);
             }
             //Quadrant 1
             else if (pos.X - focus.X < 0 && pos.Y - focus.Y > 0)
             {
-                angle = (float)(Math.PI / 2 - angle);
+                angle = (float)(2 * Math.PI - angle);
             }
             else if (pos.X - focus.X < 0 && pos.Y - focus.Y < 0)
             {
-                angle = (float)(Math.PI / 2 + angle);
+                angle += 0f;
             }
             else if (pos.X - focus.X > 0 && pos.Y - focus.Y == 0)
             {
@@ -88,16 +94,20 @@ namespace RobotGame
             }
             else if (pos.X - focus.X < 0 && pos.Y - focus.Y == 0)
             {
-                angle = (float)Math.PI / 2;
+                angle = (float)0;
             }
             else if (pos.X - focus.X == 0 && pos.Y - focus.Y > 0)
             {
-                angle = (float)0;
+                angle = (float)Math.PI * 3 / 2;
             }
             else if (pos.X - focus.X == 0 && pos.Y - focus.Y < 0)
             {
-                angle = (float)Math.PI;
+                angle = (float)Math.PI / 2;
             }
+
+            angle -= offset;
+            if (angle < 0)
+                angle += 2 * (float)Math.PI;
 
             return angle;
         }

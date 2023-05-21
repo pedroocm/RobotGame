@@ -18,20 +18,44 @@ namespace RobotGame
 {
     public class World
     {
-        RobotBoy robot_boy;
+        public Vector2 offset;
+
+        public RobotBoy RobotBoy;
+
+        public List<Projectile> Projectiles = new List<Projectile>();
+
         public World()
         {
-            robot_boy = new RobotBoy("sprites\\robotboyR", new Vector2(300, 300), new Vector2(90, 90));
+            RobotBoy = new RobotBoy("player\\robotboyR", new Vector2(300, 300), new Vector2(90, 90));
+
+            GameGlobals.PassProjectile = AddProjectile;
+
+            offset = Vector2.Zero;
         }
 
         public virtual void Update()
         {
-            robot_boy.Update();
+            RobotBoy.Update();
+
+            for (int i = 0; i < Projectiles.Count; ++i)
+            {
+                Projectiles[i].Update(offset, null);
+
+                if (Projectiles[i].Done) Projectiles.RemoveAt(i--);
+            }
+        }
+
+        public virtual void AddProjectile(object info)
+        {
+            Projectiles.Add((Projectile)info);
         }
 
         public virtual void Draw(Vector2 offset)
         {
-            robot_boy.Draw(offset);
+            RobotBoy.Draw(offset);
+
+            foreach (var projectile in Projectiles)
+                projectile.Draw(offset);
         }
     }
 }

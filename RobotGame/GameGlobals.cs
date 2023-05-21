@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace RobotGame
 {
-    internal class FrameAnimation
+    public class GameGlobals
     {
+        public static PassObject PassProjectile;
     }
 }

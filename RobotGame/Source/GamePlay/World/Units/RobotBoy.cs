@@ -15,13 +15,13 @@ using Microsoft.Xna.Framework.Media;
 
 namespace RobotGame
 {
-    public class RobotBoy : Element2d
+    public class RobotBoy : Unit
     {
-        public float Speed;
         public Texture2D Left, Right, Up, Down;
         public int BodyDir, WheelsDir;
 
         Element2d Body, Wheel;
+        RobotGun gun;
 
         public RobotBoy(string path, Vector2 position, Vector2 dimensions) : base(path, position, dimensions)
         {
@@ -29,37 +29,45 @@ namespace RobotGame
 
             Body = new Element2d(path, position, dimensions);
 
-            Left  = Globals.content.Load<Texture2D>("sprites\\robotboyL");
-            Right = Globals.content.Load<Texture2D>("sprites\\robotboyR");
-            Up    = Globals.content.Load<Texture2D>("sprites\\robotboyU");
-            Down  = Globals.content.Load<Texture2D>("sprites\\robotboyD");
+            Left  = Globals.Content.Load<Texture2D>("player\\robotboyL");
+            Right = Globals.Content.Load<Texture2D>("player\\robotboyR");
+            Up    = Globals.Content.Load<Texture2D>("player\\robotboyU");
+            Down  = Globals.Content.Load<Texture2D>("player\\robotboyD");
+
+            gun = new RobotGun(Pos, new Vector2(40, 40), this);
         }
 
         public override void Update()
         {
-            if(Globals.keyboard.Pressed("A"))
+            if(Globals.Keyboard.Pressed("A"))
             {
                 Pos = new Vector2(Pos.X - Speed, Pos.Y);
                 WheelsDir = Constants.LEFT;
             }
-            if (Globals.keyboard.Pressed("D"))
+            if (Globals.Keyboard.Pressed("D"))
             {
                 Pos = new Vector2(Pos.X + Speed, Pos.Y);
                 WheelsDir = Constants.RIGHT;
             }
-            if (Globals.keyboard.Pressed("W"))
+            if (Globals.Keyboard.Pressed("W"))
             {
                 Pos = new Vector2(Pos.X, Pos.Y - Speed);
                 WheelsDir = Constants.UP;
             }
-            if (Globals.keyboard.Pressed("S"))
+            if (Globals.Keyboard.Pressed("S"))
             {
                 Pos = new Vector2(Pos.X, Pos.Y + Speed);
                 WheelsDir = Constants.DOWN;
             }
 
-            BodyDir = Globals.GetDirection(Pos, Globals.mouse.GetScreenPos());
-            
+            BodyDir = Globals.GetDirection(Pos, Globals.Mouse.GetScreenPos());
+
+
+            if (Globals.Mouse.LeftClick())
+                gun.Shoot(this);
+
+            gun.Update(new Vector2(Pos.X, Pos.Y));
+
             base.Update();
         }
 
@@ -81,7 +89,16 @@ namespace RobotGame
                     break;
             }
 
-            base.Draw(offset);
+            if (gun.isOnTop())
+            {
+                base.Draw(offset);
+                gun.Draw(offset);
+            }
+            else
+            {
+                gun.Draw(offset);
+                base.Draw(offset);
+            }
         }
     }
 }

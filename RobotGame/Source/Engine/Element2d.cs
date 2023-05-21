@@ -26,7 +26,9 @@ namespace RobotGame
         {
             Pos = position;
             Dims = dimensions;
-            Model = Globals.content.Load<Texture2D>(path);
+            if (path != "")
+                Model = Globals.Content.Load<Texture2D>(path);
+            Rot = 0.0f;
         }
 
         public virtual void Update()
@@ -38,7 +40,7 @@ namespace RobotGame
         {
             if (Model != null)
             {
-                Globals.spriteBatch.Draw(
+                Globals.SpriteBatch.Draw(
                     Model,
                     new Rectangle((int)(Pos.X + offset.X), (int)(Pos.Y + offset.Y), (int)Dims.X, (int)Dims.Y),
                     null,
@@ -54,7 +56,7 @@ namespace RobotGame
         {
             if (Model != null)
             {
-                Globals.spriteBatch.Draw(
+                Globals.SpriteBatch.Draw(
                     Model,
                     new Rectangle((int)(Pos.X + offset.X), (int)(Pos.Y + offset.Y), (int)Dims.X, (int)Dims.Y),
                     null,
